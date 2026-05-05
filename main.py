@@ -1,20 +1,20 @@
 import os
+import json
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-# 🔑 CONFIG
-BOT_TOKEN = "AAG8XCQF_uFpK6JoN6SHRRWfWMC-3Rq1Vuo"
+# 🔑 ENV VARIABLES
+BOT_TOKEN = os.environ.get"AAG8XCQF_uFpK6JoN6SHRRWfWMC-3Rq1Vuo"
 FOLDER_ID = "1PAs718ZcdbwOeQm8J93tAxg1bh2hd-87"
 
-# JSON file name
-SERVICE_ACCOUNT_FILE = "service_account.json"
+SERVICE_ACCOUNT_INFO = json.loads(os.environ.get("SERVICE_ACCOUNT_JSON"))
 
 # Google Drive setup
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE,
+credentials = service_account.Credentials.from_service_account_info(
+    SERVICE_ACCOUNT_INFO,
     scopes=["https://www.googleapis.com/auth/drive"]
 )
 
