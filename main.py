@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 # 🔑 ENV VARIABLES
-BOT_TOKEN = os.environ.get"AAG8XCQF_uFpK6JoN6SHRRWfWMC-3Rq1Vuo"
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 FOLDER_ID = "1PAs718ZcdbwOeQm8J93tAxg1bh2hd-87"
 
 SERVICE_ACCOUNT_INFO = json.loads(os.environ.get("SERVICE_ACCOUNT_JSON"))
